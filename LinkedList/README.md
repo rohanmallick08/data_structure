@@ -1,10 +1,10 @@
 # Linked List
-### A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations.
+A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations.
 
-### It consist of Node and each node have data and a link to the next node.
+It consist of Node and each node have data and a link to the next node.
 
 # Why Linked List?
-### Arrays can be used to store linear data of similar types, but arrays have following limitations.
+Arrays can be used to store linear data of similar types, but arrays have following limitations.
 ```
 1) The size of the arrays is fixed: So we must know the upper limit on the number of elements in advance. Also, generally, the allocated memory is equal to the upper limit irrespective of the usage.
 ```
