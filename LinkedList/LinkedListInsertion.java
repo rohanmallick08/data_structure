@@ -55,11 +55,12 @@ class LinkedListInsertion {
         int count = 0;
         boolean indexFound = false;
         while (temp != null) {
-            count++;
+            
             if (count == index) {
                 indexFound = true;
                 break;
             }
+            count++;
             temp = temp.next;
         }
         if (!indexFound) {

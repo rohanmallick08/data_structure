@@ -90,11 +90,41 @@ While updating to the last Node, traverse upto last node anc check for null of n
         }
         // In order to traverse the list, we start from head and loop till last
         Node temp = head;
-        while (** temp.next ** != null) {
+        while (**temp.next** != null) {
             temp = temp.next;
         }
         //Update the last node
         temp.next = node;
         return;
+    }
+```
+## Deletion of Node at specific index.
+
+Track the previous and current Node while traversing and update the previous node with the current node next data.
+```
+    //Delete Node at Index
+    public void delete(int index) {
+        if (head == null || index == 0) {
+            head = head.next;
+            return;
+        }
+        int count = 0;
+        Node currNode = head;
+        Node prevNode = head;
+        boolean indexFound = false;
+        while(currNode != null) {
+            if(count == index) {
+                prevNode.next = currNode.next;
+                indexFound = true;
+                return;
+            }
+            count++;
+            prevNode = currNode;
+            currNode = currNode.next;
+        }
+        if (!indexFound) {
+            System.out.println("Node at specified index not found.");
+        }
+
     }
 ```
