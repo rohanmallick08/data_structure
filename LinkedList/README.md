@@ -128,3 +128,16 @@ Track the previous and current Node while traversing and update the previous nod
 
     }
 ```
+
+## Delete the LinkedList itself
+
+In C/C++, we need to free/delete all the node one by one.
+In JAVA, we just need to make the head pointer to null and rest will take care by Garbage collector of JAVA.
+```
+    //Delete LinkedList
+    public void deleteList() {
+        //Just make head as null in JAVA as it has garbage collector
+        //In C/C++, manully free all node and make head as null.
+        head = null;
+    }
+```
