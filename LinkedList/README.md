@@ -172,4 +172,21 @@ In JAVA, we just need to make the head pointer to null and rest will take care b
         return lengthRec(head);
     }
 ```
+## find at nth index in LinedList
+```
+    public int find(int index) {
+        int count = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            if (count == index) {
+                return temp.data;
+            }
+            count++;
+            temp = temp.next;
+        }
+        System.out.println("Couldn't fount index");
+        return 0;
+    }
+```
 

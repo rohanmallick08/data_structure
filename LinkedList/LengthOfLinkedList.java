@@ -19,7 +19,6 @@ class LengthOfLinkedList {
     }
 
     public int length () {
-
         Node temp = head;
         int count = 0;
 
