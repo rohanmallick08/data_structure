@@ -26,7 +26,7 @@ class DeleteLinkedList {
             temp = temp.next;
         }
     }
-
+    //Delete LinkedList
     public void deleteList() {
         //Just make head as null in JAVA as it has garbage collector
         //In C/C++, manully free all node and make head as null.

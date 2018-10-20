@@ -141,3 +141,35 @@ In JAVA, we just need to make the head pointer to null and rest will take care b
         head = null;
     }
 ```
+## Length of Lined List
+
+### Iterative Way
+```
+     public int length () {
+        Node temp = head;
+        int count = 0;
+
+        while(temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+```
+
+### Recursive Way
+```
+    public int lengthRec(Node node) {
+
+        if (node == null) {
+            return 0;
+        }
+
+        return 1 + lengthRec(node.next);
+    }
+
+    public int len() {
+        return lengthRec(head);
+    }
+```
+
