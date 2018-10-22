@@ -190,3 +190,105 @@ In JAVA, we just need to make the head pointer to null and rest will take care b
     }
 ```
 
+# Circular LinkedList
+
+In circular LinedList, all the node are connected in order to form a circle. There is no null  next of any node.
+
+Circlular LinedList can be asingly circular linked list or doubly circular linked list.
+
+![alt text](https://github.com/rohanmallick08/myFiles/blob/master/CircularLinkeList.png)
+
+## Advantages:-
+```
+1. Any node can be the first node or startting point unlike head pointer of singly linkedlist.  We can traverse the whole list by starting from any point. We just need to stop when the first visited node is visited again.
+
+2. Useful for implementation of queue. we don’t need to maintain two pointers for front and rear if we use circular linked list.
+
+3. Circular Doubly Linked Lists are used for implementation of advanced data structures like Fibonacci Heap.
+
+# Doubly LinkedList
+A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
+![alt text](https://github.com/rohanmallick08/myFiles/blob/master/DLL1.png)
+
+## Add Node in Beginning.
+```
+     public void push(int data) {
+        Node node = new Node(data);
+        node.next = head;
+        node.prev = null;
+        if (head != null) {
+            head.prev = node;
+        }
+        head = node;
+    }
+```
+
+## Add Node at index
+```
+    public void addAt(int data, int index) {
+        if (index == 0) {
+            Node node = new Node(data);
+            node.next = head;
+            node.prev = null;
+            if (head != null) {
+                head.prev = node;
+            }
+            head = node;
+            return;
+        }
+
+        int count = 0 ;
+        Node current = head;
+        Node previous = null;
+        boolean indexFound = false;
+        while(current != null) {
+            if (count == index) {
+                Node node = new Node(data);
+                node.next = previous.next;
+                node.prev = previous;
+                previous.next = node;
+                current.prev = node;
+                indexFound = true;
+                return;
+            }
+            count++;
+            current = current.next;
+            previous = current != null ? current.prev : null;
+        }
+        if (!indexFound) {
+            System.out.println("No Index Found");
+        }
+    }
+```
+
+## Append Node in last
+```
+     public void append(int data) {
+        Node node = new Node(data);
+        if (head == null) {
+            head = node;
+            return;
+        }
+        //traverse till last node
+        Node last = head;
+        while(last.next != null) {
+            last = last.next;
+        }
+        last.next = node;
+        node.prev = last;
+
+    }
+```
+
+## Print List
+```
+    public void print() {
+        Node current = head;
+
+        while(current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        } 
+    }
+```
+
